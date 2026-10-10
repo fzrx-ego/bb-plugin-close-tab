@@ -6,11 +6,17 @@
 
 import { definePluginApp } from "@get-bb/plugin-sdk/app";
 import { closeActiveTab, mountCloseTab } from "./lib/mount";
+import { mountPanelClose } from "./lib/panel-close";
 
 export default definePluginApp((app) => {
   app.contentScripts.register({
     id: "tab-gestures",
     mount: mountCloseTab,
+  });
+
+  app.contentScripts.register({
+    id: "panel-close",
+    mount: mountPanelClose,
   });
 
   app.commands.register({

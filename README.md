@@ -16,6 +16,9 @@ bb plugin install git:https://github.com/fzrx-ego/bb-plugin-close-tab.git@semver
 - **Control+W** closes the active tab (⌘W is taken: the browser closes its own
   tab, the desktop app closes the panel)
 - **Palette** (Mod+Shift+P) → "Close Tab: close the active document tab"
+- **× at the right of the panel header** hides the whole panel, like the × on
+  the neighbouring side panels. It presses BB's own "Hide right panel" toggle
+  (`lib/panel-close.ts`) and is not shown when that toggle is absent.
 
 ## How it works
 
