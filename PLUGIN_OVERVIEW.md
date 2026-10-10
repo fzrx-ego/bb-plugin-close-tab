@@ -1,21 +1,19 @@
-Closes preview tabs in the thread without aiming at the ×.
-
 ## Who it is for
 
-People already in a BB thread who opened files in the preview and now cannot close those tabs except by hitting a small close button. The next step is still in the thread: another file, another glance, not a trip to a window menu.
-
-Not a file manager and not a way to close threads. It only closes document tabs in the preview.
+People who review an agent's work in a BB thread. The answer names a few files, you open them in the preview one by one, and after reading them the tab strip is full. Closing each one means finding a small × that appears only on hover, and ⌘W closes the whole window instead of the tab.
 
 ## What you get
 
-Close the tab you are done with the way a browser does: double-click, middle-click, or right-click for Close / Close others / Close tabs to the right. On a Mac, Control+W closes the active tab (⌘W is taken by the window). The command palette has the same action.
+Close a tab the way a browser taught you: double-click it, or click it with the middle button. On a Mac trackpad a three-finger click works too, and a click that misses the tab and lands on the page still closes the tab under the cursor.
 
-A three-finger click that lands on the page instead of the pill still closes the tab under the cursor.
+Control+W closes the active tab, and the command palette has the same action. ⌘W stays with the window.
+
+When you are done with the files, the × at the right of the preview header hides the whole panel, the same way the × closes the side panels next to it.
 
 ## How it works
 
-BB has no API for closing a preview tab, so the plugin clicks the tab's own close control. If BB renames that control, the gestures stop; nothing else in BB breaks.
+BB has no API for closing a preview tab, so the plugin presses the tab's own close control. The panel × presses BB's own "Hide right panel" button. Where BB shows no such button, for example in the browser, this × does not appear. If BB renames these controls, the gestures stop and nothing else in BB breaks.
 
 ## First step
 
-Open a file in the preview, then double-click its tab. The file is gone from the strip; the thread is still there.
+Open two or three files from a chat answer in the preview. Double-click the tab of the one you have read: it leaves the strip, the other files stay open, and the thread stays where it was.

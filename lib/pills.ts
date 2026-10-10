@@ -61,15 +61,6 @@ export function activeCloseButtonIn(root: ParentNode): HTMLElement | null {
   return null;
 }
 
-/** Human label of the tab owning `closeButton`, for menus and messages. */
-export function labelFor(closeButton: Element): string {
-  const pill = pillFor(closeButton);
-  const select = pill.querySelector("button:not([data-tab-pill-close])");
-  const text = select?.textContent?.trim();
-  if (text !== undefined && text !== "") return text;
-  return select?.getAttribute("aria-label")?.trim() ?? "tab";
-}
-
 export interface TabTarget {
   /** Close button of the tab the gesture addressed. */
   button: HTMLElement;
@@ -91,18 +82,4 @@ export function targetAt(
   }
   if (button === null) return null;
   return { button, strip: stripFor(button) };
-}
-
-/** Close buttons that a "close others" / "close to the right" action targets. */
-export function siblingsOf(
-  target: TabTarget,
-  scope: "others" | "right",
-): HTMLElement[] {
-  const root = target.strip;
-  if (root === null) return [];
-  const buttons = closeButtonsIn(root);
-  const index = buttons.indexOf(target.button);
-  if (index < 0) return [];
-  if (scope === "right") return buttons.slice(index + 1);
-  return buttons.filter((button) => button !== target.button);
 }
